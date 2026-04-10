@@ -1,0 +1,1 @@
+const res=document.getElementById('res');function run(){let i=+instances.value,s=+switch.value;if(!i||!s){res.innerText='Enter values';return;}res.innerText=`Switch time: ${(i*s).toFixed(2)}s`; }

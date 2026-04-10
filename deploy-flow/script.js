@@ -1,0 +1,1 @@
+const res=document.getElementById('res');function run(){let f=flow.value.split('\n').filter(x=>x.trim()).length;res.innerText=`Flow nodes: ${f}`;}
