@@ -1,117 +1,1225 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="PkLa_ViOo6FAHpvh8SacceMb95o9tePRdrqLNBz9X1M" />
-    <title>Deployment Automation Tools – CI/CD, Rollbacks & Infrastructure Pipelines</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="PkLa_ViOo6FAHpvh8SacceMb95o9tePRdrqLNBz9X1M" />
+<meta name="robots" content="index, follow">
 
-    <meta name="description" content="Automate deployments with tools for CI/CD, blue-green deployments, rollback strategies, infrastructure pipelines and deployment visualization.">
+<title>Deployment Automation – Free CI/CD Pipeline Generator, Solutions &amp; Best Practices (2025)</title>
 
-    <meta name="keywords" content="ci cd pipeline tools, blue green deployment strategy, deployment rollback tool, infrastructure as code pipeline, deployment visualization tool, devops deployment automation">
+<meta name="description" content="Free deployment automation tools. Generate GitHub Actions, GitLab CI, and Jenkins pipelines for your stack. Blue-green deployment, rollback strategies, and deployment automation solutions guide for 2025.">
 
-    <link rel="canonical" href="/deployment-automation-tools/">
+<meta name="keywords" content="deployment automation, deployment automation solutions, deployment automation tools, ci cd pipeline generator, github actions generator, deployment pipeline, blue green deployment, rollback strategy, devops deployment automation, automated deployment">
+
+<link rel="canonical" href="https://franrivalbigprojects.github.io/deployment-automation-tools/">
+
+<meta property="og:title" content="Deployment Automation – Free CI/CD Pipeline Generator and Solutions Guide 2025">
+<meta property="og:description" content="Generate GitHub Actions, GitLab CI, and Jenkins pipelines for your stack. Deployment automation solutions, best practices, and strategy guide.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #04080f;
+  --surface: #070d1a;
+  --surface2: #0c1428;
+  --border: #0f1e30;
+  --border2: #152840;
+  --dep: #818cf8;
+  --dep-dim: rgba(129,140,248,0.12);
+  --dep-dim2: rgba(129,140,248,0.05);
+  --dep-glow: rgba(129,140,248,0.18);
+  --green: #22c55e;
+  --green-dim: rgba(34,197,94,0.1);
+  --green-dim2: rgba(34,197,94,0.05);
+  --orange: #fb923c;
+  --orange-dim: rgba(251,146,60,0.08);
+  --yellow: #fbbf24;
+  --yellow-dim: rgba(251,191,36,0.08);
+  --red: #f87171;
+  --red-dim: rgba(248,113,113,0.08);
+  --text: #b8c8e8;
+  --text-muted: #3a4870;
+  --text-dim: #0f1830;
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'Inter', sans-serif;
+  --r: 8px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+header {
+  border-bottom: 1px solid var(--border2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(4,8,15,0.97);
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-pill {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--dep);
+  background: var(--dep-dim2);
+  border: 1px solid rgba(129,140,248,0.3);
+  border-radius: 3px;
+  padding: 3px 9px;
+}
+
+.logo-text { font-family: var(--mono); font-size: 12px; color: var(--text-muted); }
+.logo-text strong { color: var(--dep); font-weight: 500; }
+
+.wrapper {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  padding: 48px 0 28px;
+  border-bottom: 1px solid var(--border2);
+  margin-bottom: 24px;
+}
+
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dep);
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+h1 {
+  font-size: clamp(22px, 3.2vw, 30px);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h1 em { font-style: normal; color: var(--dep); }
+
+.hero-sub {
+  font-size: 15px;
+  color: var(--text-muted);
+  max-width: 660px;
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.hero-sub strong { color: var(--text); }
+
+.pill-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.pill {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 3px 9px;
+  border-radius: 3px;
+  border: 1px solid;
+}
+.pill-d  { color: var(--dep); background: var(--dep-dim2); border-color: rgba(129,140,248,0.3); }
+.pill-dim { color: var(--text-muted); border-color: var(--border2); }
+
+/* TOOL SHELL */
+.tool-shell {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.tool-topbar {
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border2);
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.topbar-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.btn-sm {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid;
+  background: transparent;
+  transition: opacity 0.15s;
+}
+.btn-sm:hover { opacity: 0.75; }
+.btn-dep  { color: var(--dep); border-color: rgba(129,140,248,0.3); background: var(--dep-dim2); }
+.btn-ghost { color: var(--text-muted); border-color: var(--border2); }
+
+/* PLATFORM TABS */
+.platform-row {
+  display: flex;
+  gap: 6px;
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--border2);
+  background: var(--bg);
+  flex-wrap: wrap;
+}
+
+.plat-btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 5px 14px;
+  border-radius: 3px;
+  border: 1px solid var(--border2);
+  cursor: pointer;
+  background: transparent;
+  color: var(--text-muted);
+  transition: all 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.plat-btn:hover { border-color: var(--dep); color: var(--text); }
+.plat-btn.active { border-color: var(--dep); background: var(--dep-dim2); color: var(--dep); }
+
+/* OPTIONS GRID */
+.opts-body { padding: 14px 18px; }
+
+.opts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.field { display: flex; flex-direction: column; gap: 5px; }
+
+.field-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.dep-select {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text);
+  width: 100%;
+  -webkit-appearance: none;
+  transition: border-color 0.2s;
+}
+
+.dep-select:focus { outline: none; border-color: rgba(129,140,248,0.35); }
+.dep-select option { background: #0c1428; }
+
+.check-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+
+.dep-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.dep-check input { cursor: pointer; accent-color: var(--dep); width: 13px; height: 13px; }
+
+.btn-generate {
+  padding: 10px 26px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--dep);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 0 14px var(--dep-glow);
+  transition: opacity 0.15s;
+  margin-bottom: 14px;
+}
+.btn-generate:hover { opacity: 0.87; }
+
+.output-head {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.yaml-box {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-left: 3px solid var(--dep);
+  border-radius: 0 var(--r) var(--r) 0;
+  padding: 14px 16px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--green);
+  white-space: pre;
+  overflow-x: auto;
+  line-height: 1.7;
+  max-height: 420px;
+  overflow-y: auto;
+  margin-bottom: 8px;
+}
+
+.copy-btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(34,197,94,0.25);
+  background: var(--green-dim2);
+  color: var(--green);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.copy-btn:hover { opacity: 0.75; }
+
+/* SOLUTIONS TABLE */
+.sol-table {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.sol-row {
+  display: grid;
+  grid-template-columns: 140px 80px 80px 1fr;
+  border-bottom: 1px solid var(--border2);
+}
+
+.sol-row:last-child { border-bottom: none; }
+.sol-row.sol-head { background: var(--surface2); }
+.sol-row:hover:not(.sol-head) { background: rgba(129,140,248,0.02); }
+
+.sol-cell {
+  padding: 9px 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  border-right: 1px solid var(--border2);
+}
+
+.sol-cell:last-child { border-right: none; }
+.sol-head .sol-cell { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
+.sol-name { color: var(--dep); font-weight: 600; }
+
+.badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid;
+}
+.b-free  { color: var(--green);  background: var(--green-dim2); border-color: rgba(34,197,94,0.25); }
+.b-saas  { color: var(--dep);    background: var(--dep-dim2);   border-color: rgba(129,140,248,0.25); }
+.b-oss   { color: var(--orange); background: var(--orange-dim); border-color: rgba(251,146,60,0.2); }
+.b-cloud { color: var(--yellow); background: var(--yellow-dim); border-color: rgba(251,191,36,0.2); }
+
+/* SECTION */
+hr.divider { border: none; border-top: 1px solid var(--border2); margin: 50px 0; }
+.content-section { margin-bottom: 50px; }
+
+.sec-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.sec-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--dep);
+  white-space: nowrap;
+  opacity: 0.7;
+}
+
+.sec-rule { flex: 1; height: 1px; background: var(--border2); }
+
+p { font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 10px; max-width: 820px; }
+p strong { color: var(--text); }
+
+code {
+  font-family: var(--mono);
+  font-size: 12px;
+  background: var(--surface2);
+  color: var(--dep);
+  padding: 2px 7px;
+  border-radius: 3px;
+  border: 1px solid var(--border2);
+}
+
+.dense-block {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  padding: 22px;
+  margin-top: 14px;
+}
+
+.dense-block p { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border2); max-width: none; }
+.dense-block p:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+
+.faq-list { margin-top: 14px; border: 1px solid var(--border2); border-radius: var(--r); overflow: hidden; }
+.faq-item { border-bottom: 1px solid var(--border2); }
+.faq-item:last-child { border-bottom: none; }
+
+.faq-q {
+  width: 100%;
+  text-align: left;
+  background: var(--surface);
+  border: none;
+  padding: 13px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  font-family: var(--sans);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  transition: background 0.15s;
+}
+
+.faq-q:hover { background: var(--dep-dim2); }
+.faq-arrow { font-family: var(--mono); font-size: 11px; color: var(--text-dim); transition: transform 0.2s; flex-shrink: 0; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+.faq-a {
+  display: none;
+  padding: 0 18px 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  border-top: 1px solid var(--border2);
+  background: var(--bg);
+}
+
+.faq-item.open .faq-a { display: block; }
+.faq-a code { color: var(--dep); background: var(--dep-dim2); }
+
+.subtools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.stl {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  padding: 12px 14px;
+  text-decoration: none;
+  display: block;
+  transition: border-color 0.15s;
+}
+
+.stl:hover { border-color: rgba(129,140,248,0.3); }
+.stl-eye  { font-family: var(--mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 4px; }
+.stl-name { font-family: var(--mono); font-size: 12px; color: var(--dep); font-weight: 500; }
+
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 50px; }
+.tag {
+  font-family: var(--mono); font-size: 10px; color: var(--text-muted);
+  background: var(--surface); border: 1px solid var(--border2);
+  border-radius: 100px; padding: 4px 12px; cursor: default;
+}
+.tag:hover { color: var(--dep); border-color: rgba(129,140,248,0.3); }
+
+footer { border-top: 1px solid var(--border2); padding: 20px 0; position: relative; z-index: 1; }
+.footer-inner {
+  max-width: 1060px; margin: 0 auto; padding: 0 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 8px;
+}
+footer p { font-family: var(--mono); font-size: 11px; color: var(--text-dim); margin: 0; }
+
+@media (max-width: 640px) {
+  .opts-grid { grid-template-columns: 1fr 1fr; }
+  .sol-row   { grid-template-columns: 110px 60px 1fr; }
+  .sol-row .sol-cell:nth-child(3) { display: none; }
+}
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Deployment Automation Pipeline Generator","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free deployment automation pipeline generator. Generate GitHub Actions, GitLab CI, and Jenkins pipeline YAML for Node.js, Python, Java, Go, Docker, and Kubernetes. Includes blue-green deployment, rollback, and Slack notifications."}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is deployment automation?","acceptedAnswer":{"@type":"Answer","text":"Deployment automation is the process of using software to automatically deploy application code and configuration changes to target environments without manual intervention. A deployment automation solution typically includes: a CI/CD pipeline that builds, tests, and packages code; a deployment mechanism that pushes the build to servers or containers; environment-specific configuration management; rollback capabilities if the deployment fails; and notifications about deployment status. Common deployment automation solutions include GitHub Actions, GitLab CI, Jenkins, CircleCI, and Octopus Deploy."}},{"@type":"Question","name":"What are the best deployment automation solutions in 2025?","acceptedAnswer":{"@type":"Answer","text":"Top deployment automation solutions in 2025: GitHub Actions (free for public repos, integrated with GitHub), GitLab CI/CD (built into GitLab, powerful pipeline YAML), Jenkins (open source, highly customizable), CircleCI (SaaS, fast), ArgoCD (GitOps for Kubernetes), Octopus Deploy (enterprise, complex release management), AWS CodePipeline (native AWS), Spinnaker (multi-cloud, Netflix-origin). For most teams starting out: GitHub Actions is the simplest and most cost-effective deployment automation solution."}}]}
+</script>
+
 </head>
 
 <body>
-
 <header>
-    <h1>Deployment Automation Tools – CI/CD, Pipelines & Release Strategies</h1>
-    <p>
-        A complete suite of <strong>deployment automation tools</strong> designed to help teams
-        manage <strong>CI/CD pipelines, infrastructure as code, deployment flows, and rollback strategies</strong>
-        with reliability and efficiency.
-    </p>
+  <div class="header-inner">
+    <span class="logo-pill">Deploy</span>
+    <span class="logo-text"><strong>automation</strong> &middot; pipeline generator &middot; solutions 2025</span>
+  </div>
 </header>
 
-<section>
-    <h2>🚀 CI/CD & Infrastructure Pipelines</h2>
-    <ul>
-        <li><a href="/deployment-automation-tools/cicd-iac/">CI/CD + IaC Tool</a> – Automate pipelines with infrastructure as code</li>
-        <li><a href="/deployment-automation-tools/infra-pipeline/">Infrastructure Pipeline Tool</a> – Manage infrastructure deployments</li>
-    </ul>
-</section>
+<div class="wrapper">
 
-<section>
-    <h2>🔄 Deployment Strategies</h2>
-    <ul>
-        <li><a href="/deployment-automation-tools/bluegreen/">Blue-Green Deployment Tool</a> – Zero-downtime deployment strategy</li>
-        <li><a href="/deployment-automation-tools/rollback/">Rollback Tool</a> – Safely revert deployments</li>
-    </ul>
-</section>
-
-<section>
-    <h2>📊 Deployment Analysis & Visualization</h2>
-    <ul>
-        <li><a href="/deployment-automation-tools/deploy-flow/">Deployment Flow Analyzer</a> – Analyze release workflows</li>
-        <li><a href="/deployment-automation-tools/deploy-vis/">Deployment Visualization Tool</a> – Visualize pipelines and stages</li>
-    </ul>
-</section>
-
-<section>
-    <h2>📊 What Do These Tools Help You Optimize?</h2>
-    <p>
-        These <strong>DevOps tools</strong> help you:
+  <section class="hero">
+    <p class="hero-eyebrow">// DevOps Deployment Automation 2025</p>
+    <h1><em>Deployment Automation</em> —<br>Pipeline Generator &amp; Solutions Guide</h1>
+    <p class="hero-sub">
+      Generate <strong>GitHub Actions, GitLab CI, and Jenkins pipelines</strong> for your stack. Complete deployment automation solutions guide with blue-green, canary, and rollback strategies.
     </p>
-    <ul>
-        <li>Automate CI/CD pipelines</li>
-        <li>Reduce deployment errors and downtime</li>
-        <li>Implement safe rollback strategies</li>
-        <li>Visualize and optimize deployment workflows</li>
-        <li>Manage infrastructure as code efficiently</li>
-    </ul>
-</section>
+    <div class="pill-row">
+      <span class="pill pill-d">GitHub Actions</span>
+      <span class="pill pill-d">GitLab CI</span>
+      <span class="pill pill-dim">Jenkins</span>
+      <span class="pill pill-dim">Blue-Green</span>
+      <span class="pill pill-dim">Rollback</span>
+      <span class="pill pill-dim">Kubernetes</span>
+    </div>
+  </section>
 
-<section>
-    <h2>🚀 Long-Tail Keywords & Search Intent</h2>
-    <ul>
-        <li>ci cd pipeline automation tools devops</li>
-        <li>blue green deployment strategy explained example</li>
-        <li>deployment rollback strategy best practices</li>
-        <li>infrastructure as code pipeline automation</li>
-        <li>deployment workflow visualization tool devops</li>
-        <li>how to automate deployments with ci cd</li>
-    </ul>
-</section>
+  <!-- PIPELINE GENERATOR -->
 
-<section>
-    <h2>🧠 Why Deployment Automation Matters</h2>
-    <p>
-        Efficient deployment pipelines are critical for modern software delivery.
-        Automation reduces risk, improves reliability, and enables faster releases.
-    </p>
-</section>
+  <div class="tool-shell">
+    <div class="tool-topbar">
+      <span class="topbar-label">// CI/CD Pipeline Generator</span>
+      <div style="display:flex;gap:8px;">
+        <button class="btn-sm btn-dep" id="sampleBtn">Load Example</button>
+        <button class="btn-sm btn-ghost" id="clearBtn">Clear</button>
+      </div>
+    </div>
 
-<section>
-    <h2>❓ Frequently Asked Questions</h2>
 
-    <h3>What is CI/CD?</h3>
-    <p>
-        Continuous Integration and Continuous Deployment automate code integration and delivery processes.
-    </p>
+<div class="platform-row">
+  <button class="plat-btn active" onclick="setPlatform('gha',this)">GitHub Actions</button>
+  <button class="plat-btn" onclick="setPlatform('gitlab',this)">GitLab CI</button>
+  <button class="plat-btn" onclick="setPlatform('jenkins',this)">Jenkins</button>
+</div>
 
-    <h3>What is blue-green deployment?</h3>
-    <p>
-        A strategy that uses two environments to ensure zero downtime during releases.
-    </p>
+<div class="opts-body">
+  <div class="opts-grid">
+    <div class="field">
+      <label class="field-label">Language / Runtime</label>
+      <select class="dep-select" id="langSel">
+        <option value="node">Node.js</option>
+        <option value="python">Python</option>
+        <option value="java">Java (Maven)</option>
+        <option value="go">Go</option>
+        <option value="docker">Docker only</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="field-label">Deploy target</label>
+      <select class="dep-select" id="targetSel">
+        <option value="k8s">Kubernetes</option>
+        <option value="ec2">AWS EC2 / SSH</option>
+        <option value="ecs">AWS ECS</option>
+        <option value="gcp">GCP Cloud Run</option>
+        <option value="docker-compose">Docker Compose</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="field-label">Deployment strategy</label>
+      <select class="dep-select" id="strategySel">
+        <option value="rolling">Rolling update</option>
+        <option value="bluegreen">Blue-Green</option>
+        <option value="canary">Canary</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="field-label">Branch to deploy</label>
+      <select class="dep-select" id="branchSel">
+        <option value="main">main</option>
+        <option value="master">master</option>
+        <option value="release">release/*</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="field-label">Test framework</label>
+      <select class="dep-select" id="testSel">
+        <option value="jest">Jest (Node.js)</option>
+        <option value="pytest">pytest (Python)</option>
+        <option value="junit">JUnit (Java)</option>
+        <option value="go-test">go test</option>
+        <option value="none">No tests</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="field-label">Environment stages</label>
+      <select class="dep-select" id="envSel">
+        <option value="staging-prod">staging + production</option>
+        <option value="dev-staging-prod">dev + staging + prod</option>
+        <option value="prod-only">production only</option>
+      </select>
+    </div>
+  </div>
 
-    <h3>Why are rollbacks important?</h3>
-    <p>
-        Rollbacks allow you to quickly revert changes if a deployment fails.
-    </p>
+  <div class="check-row">
+    <label class="dep-check"><input type="checkbox" id="cbDocker" checked> Docker build &amp; push</label>
+    <label class="dep-check"><input type="checkbox" id="cbSlack"> Slack notifications</label>
+    <label class="dep-check"><input type="checkbox" id="cbRollback" checked> Rollback step</label>
+    <label class="dep-check"><input type="checkbox" id="cbSecurity"> Security scan (Trivy)</label>
+    <label class="dep-check"><input type="checkbox" id="cbCache" checked> Dependency caching</label>
+  </div>
 
-    <h3>What is infrastructure as code?</h3>
-    <p>
-        Managing infrastructure using code to automate provisioning and deployment.
-    </p>
-</section>
+  <button class="btn-generate" id="generateBtn">Generate Pipeline</button>
+
+  <div id="outputDiv" style="display:none;">
+    <div class="output-head" id="outputHead">// .github/workflows/deploy.yml</div>
+    <div class="yaml-box" id="yamlBox"></div>
+    <button class="copy-btn" id="copyBtn">Copy YAML</button>
+    <span id="copyFb" style="font-family:var(--mono);font-size:11px;color:var(--green);display:none;margin-left:8px;">Copied!</span>
+  </div>
+</div>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- SOLUTIONS TABLE -->
+
+  <section class="content-section">
+    <div class="sec-head">
+      <span class="sec-label">Deployment automation solutions 2025</span>
+      <span class="sec-rule"></span>
+    </div>
+    <div class="sol-table">
+      <div class="sol-row sol-head">
+        <div class="sol-cell">Solution</div>
+        <div class="sol-cell">Type</div>
+        <div class="sol-cell">Best for</div>
+        <div class="sol-cell">Notes</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">GitHub Actions</div>
+        <div class="sol-cell"><span class="badge b-saas">SaaS</span></div>
+        <div class="sol-cell" style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">GitHub repos</div>
+        <div class="sol-cell">Free for public repos. 2,000 min/month free private. Largest marketplace of reusable actions. Best starting point.</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">GitLab CI/CD</div>
+        <div class="sol-cell"><span class="badge b-saas">SaaS/OSS</span></div>
+        <div class="sol-cell" style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">GitLab repos</div>
+        <div class="sol-cell">Built into GitLab. Powerful .gitlab-ci.yml. Self-hosted option. 400 min/month free on SaaS.</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">Jenkins</div>
+        <div class="sol-cell"><span class="badge b-oss">Open Source</span></div>
+        <div class="sol-cell" style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">Self-hosted</div>
+        <div class="sol-cell">Most flexible, huge plugin ecosystem. Requires maintenance. Jenkinsfile (Groovy DSL). Best for complex enterprise pipelines.</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">ArgoCD</div>
+        <div class="sol-cell"><span class="badge b-oss">Open Source</span></div>
+        <div class="sol-cell" style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">Kubernetes</div>
+        <div class="sol-cell">GitOps for Kubernetes. Syncs Kubernetes manifests from Git. Automatic rollback on health check failure.</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">CircleCI</div>
+        <div class="sol-cell"><span class="badge b-saas">SaaS</span></div>
+        <div class="sol-cell" style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">Speed</div>
+        <div class="sol-cell">Fast pipelines, good Docker support. 6,000 free build minutes/month. Strong caching.</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">AWS CodePipeline</div>
+        <div class="sol-cell"><span class="badge b-cloud">AWS</span></div>
+        <div class="sol-cell" style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">AWS stacks</div>
+        <div class="sol-cell">Native AWS integration (ECS, Lambda, EC2). Pay-per-pipeline-execution. Best for AWS-native teams.</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">Octopus Deploy</div>
+        <div class="sol-cell"><span class="badge b-saas">Enterprise</span></div>
+        <div class="sol-cell" style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">Enterprise</div>
+        <div class="sol-cell">Complex release management, multi-environment, approval workflows. Strong .NET / Windows support.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+
+  <section class="content-section">
+    <div class="sec-head">
+      <span class="sec-label">Deployment strategies explained</span>
+      <span class="sec-rule"></span>
+    </div>
+    <div class="dense-block">
+      <p><strong>Rolling update — simplest, most common</strong><br>
+      Replaces instances one by one (or in batches). Zero-downtime if done correctly. Rollback: re-deploy the previous image. Risk: mixed versions run simultaneously during rollout — ensure backward compatibility in APIs and database schemas. Kubernetes RollingUpdate deployment strategy does this natively. Set <code>maxUnavailable: 0</code> and <code>maxSurge: 1</code> for true zero-downtime rolling.</p>
+      <p><strong>Blue-Green deployment — safest, highest cost</strong><br>
+      Maintain two identical environments: Blue (current) and Green (new version). Deploy to Green, run smoke tests, then switch traffic (via load balancer or DNS). Rollback: switch traffic back to Blue in seconds. Cost: requires double the infrastructure. Best for: critical services where instant rollback is required. AWS Elastic Beanstalk, Kubernetes with two Deployments + Service switch, or Nginx upstream switch.</p>
+      <p><strong>Canary deployment — gradual rollout</strong><br>
+      Route a small percentage of traffic (e.g., 5%) to the new version. Monitor error rates, latency, and business metrics. Gradually increase traffic (5% → 25% → 50% → 100%). Rollback: reduce canary traffic to 0%. Tools: Kubernetes with Argo Rollouts or Flagger, AWS CodeDeploy canary, NGINX split_clients. Requires good observability — you need metrics to know when to proceed or rollback.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+
+  <section class="content-section">
+    <div class="sec-head">
+      <span class="sec-label">FAQ — deployment automation</span>
+      <span class="sec-rule"></span>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is deployment automation?<span class="faq-arrow">&#9660;</span></button>
+        <div class="faq-a">Deployment automation uses software to deploy code and configuration changes without manual steps. A complete solution includes: CI/CD pipeline (build, test, package), deployment mechanism (push to servers/containers), environment config management, rollback capability, and notifications. Common solutions: GitHub Actions, GitLab CI, Jenkins, ArgoCD, Octopus Deploy. Use the pipeline generator above to create a working YAML for your stack.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What are the best deployment automation solutions in 2025?<span class="faq-arrow">&#9660;</span></button>
+        <div class="faq-a"><strong>For most teams:</strong> GitHub Actions — free for public repos, 2000 min/month free, largest ecosystem. <strong>Kubernetes:</strong> ArgoCD (GitOps) or Flux. <strong>Enterprise:</strong> Octopus Deploy (complex release management). <strong>AWS:</strong> CodePipeline + CodeDeploy. <strong>Self-hosted:</strong> Jenkins (most flexible). <strong>Speed:</strong> CircleCI (fast builds, strong caching). Start with GitHub Actions — it handles 90% of use cases and requires no infrastructure.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How do I implement a rollback in CI/CD?<span class="faq-arrow">&#9660;</span></button>
+        <div class="faq-a">Three approaches: (1) <strong>Re-deploy previous image tag</strong> — tag Docker images with git SHA, re-trigger deployment with the previous tag. (2) <strong>Blue-Green switch</strong> — keep the old environment running, switch traffic back. Fastest rollback. (3) <strong>ArgoCD / GitOps</strong> — revert the Git commit that changed the manifest, ArgoCD auto-syncs. Always use immutable image tags (never <code>latest</code>) — rollback requires knowing which exact image to roll back to.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is GitOps and how does it relate to deployment automation?<span class="faq-arrow">&#9660;</span></button>
+        <div class="faq-a">GitOps is a deployment automation pattern where Git is the single source of truth for both application code and infrastructure state. A GitOps agent (ArgoCD, Flux) continuously watches a Git repo and ensures the cluster state matches what's in Git. Deployments happen by merging a PR that updates the image tag in a Kubernetes manifest. Rollback = revert the Git commit. Benefits: full audit trail, all changes reviewed via PRs, automatic drift detection. Best for Kubernetes deployments.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="sec-head">
+      <span class="sec-label">Deployment tools</span>
+      <span class="sec-rule"></span>
+    </div>
+    <div class="subtools-grid">
+      <a href="bluegreen/" class="stl"><p class="stl-eye">strategy //</p><span class="stl-name">Blue-Green Deployment</span></a>
+      <a href="rollback/" class="stl"><p class="stl-eye">rollback //</p><span class="stl-name">Rollback Tool</span></a>
+      <a href="cicd-iac/" class="stl"><p class="stl-eye">iac //</p><span class="stl-name">CI/CD + IaC Tool</span></a>
+      <a href="deploy-vis/" class="stl"><p class="stl-eye">visualize //</p><span class="stl-name">Deployment Visualizer</span></a>
+      <a href="infra-pipeline/" class="stl"><p class="stl-eye">infra //</p><span class="stl-name">Infrastructure Pipeline</span></a>
+    </div>
+  </section>
+
+  <div class="tag-cloud">
+    <span class="tag">deployment automation</span>
+    <span class="tag">deployment automation solutions</span>
+    <span class="tag">ci cd pipeline generator</span>
+    <span class="tag">github actions generator</span>
+    <span class="tag">gitlab ci yaml</span>
+    <span class="tag">jenkins pipeline</span>
+    <span class="tag">blue green deployment</span>
+    <span class="tag">canary deployment</span>
+    <span class="tag">deployment rollback</span>
+    <span class="tag">gitops argocd</span>
+  </div>
+
+</div>
 
 <footer>
-    <p>
-        Automate and optimize your releases with advanced <strong>deployment automation tools</strong>
-        for DevOps and CI/CD pipelines.
-    </p>
+  <div class="footer-inner">
+    <p>deployment-automation &middot; pipeline generator &middot; solutions &middot; 2025</p>
+    <p>github actions &middot; gitlab ci &middot; jenkins &middot; blue-green &middot; rollback</p>
+  </div>
 </footer>
+
+<script>
+var currentPlatform = 'gha';
+
+function setPlatform(plat, btn) {
+  currentPlatform = plat;
+  document.querySelectorAll('.plat-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  var heads = { gha: '// .github/workflows/deploy.yml', gitlab: '// .gitlab-ci.yml', jenkins: '// Jenkinsfile' };
+  document.getElementById('outputHead').textContent = heads[plat] || heads.gha;
+}
+
+function getOpts() {
+  return {
+    lang:     document.getElementById('langSel').value,
+    target:   document.getElementById('targetSel').value,
+    strategy: document.getElementById('strategySel').value,
+    branch:   document.getElementById('branchSel').value,
+    test:     document.getElementById('testSel').value,
+    envs:     document.getElementById('envSel').value,
+    docker:   document.getElementById('cbDocker').checked,
+    slack:    document.getElementById('cbSlack').checked,
+    rollback: document.getElementById('cbRollback').checked,
+    security: document.getElementById('cbSecurity').checked,
+    cache:    document.getElementById('cbCache').checked
+  };
+}
+
+var LANG_SETUP = {
+  node:   { runtime: 'Node.js 20', setup: 'actions/setup-node@v4\n        with:\n          node-version: "20"', install: 'npm ci', test: 'npm test', build: 'npm run build', pkg: 'package-lock.json' },
+  python: { runtime: 'Python 3.12', setup: 'actions/setup-python@v5\n        with:\n          python-version: "3.12"', install: 'pip install -r requirements.txt', test: 'pytest', build: 'echo "No build step"', pkg: 'requirements.txt' },
+  java:   { runtime: 'Java 21', setup: 'actions/setup-java@v4\n        with:\n          java-version: "21"\n          distribution: "temurin"', install: 'mvn dependency:resolve', test: 'mvn test', build: 'mvn package -DskipTests', pkg: 'pom.xml' },
+  go:     { runtime: 'Go 1.22', setup: 'actions/setup-go@v5\n        with:\n          go-version: "1.22"', install: 'go mod download', test: 'go test ./...', build: 'go build -o app .', pkg: 'go.sum' },
+  docker: { runtime: 'Docker', setup: 'docker/setup-buildx-action@v3', install: 'echo "Docker only"', test: 'echo "No tests"', build: 'echo "Docker build"', pkg: 'Dockerfile' }
+};
+
+var DEPLOY_STEPS = {
+  k8s: function(strategy) {
+    if (strategy === 'bluegreen') {
+      return [
+        '      - name: Blue-Green Deploy to Kubernetes',
+        '        run: |',
+        '          # Deploy new (green) version',
+        '          kubectl set image deployment/app-green app=$IMAGE_TAG',
+        '          kubectl rollout status deployment/app-green',
+        '          # Run smoke tests against green',
+        '          kubectl exec -it $(kubectl get pod -l app=app-green -o name | head -1) -- /healthcheck.sh',
+        '          # Switch service to green',
+        '          kubectl patch service app -p \'{"spec":{"selector":{"slot":"green"}}}\'',
+        '          echo "Switched to green. Blue remains for rollback."'
+      ].join('\n');
+    }
+    return [
+      '      - name: Deploy to Kubernetes',
+      '        run: |',
+      '          kubectl set image deployment/app app=$IMAGE_TAG',
+      '          kubectl rollout status deployment/app --timeout=5m'
+    ].join('\n');
+  },
+  ec2: function() {
+    return [
+      '      - name: Deploy to EC2 via SSH',
+      '        uses: appleboy/ssh-action@v1.0.0',
+      '        with:',
+      '          host: ${{ secrets.EC2_HOST }}',
+      '          username: ubuntu',
+      '          key: ${{ secrets.EC2_SSH_KEY }}',
+      '          script: |',
+      '            docker pull ${{ env.IMAGE_TAG }}',
+      '            docker stop app || true',
+      '            docker rm app || true',
+      '            docker run -d --name app -p 80:3000 ${{ env.IMAGE_TAG }}'
+    ].join('\n');
+  },
+  ecs: function() {
+    return [
+      '      - name: Deploy to AWS ECS',
+      '        uses: aws-actions/amazon-ecs-deploy-task-definition@v1',
+      '        with:',
+      '          task-definition: task-definition.json',
+      '          service: my-service',
+      '          cluster: my-cluster',
+      '          wait-for-service-stability: true'
+    ].join('\n');
+  },
+  gcp: function() {
+    return [
+      '      - name: Deploy to Cloud Run',
+      '        uses: google-github-actions/deploy-cloudrun@v2',
+      '        with:',
+      '          service: my-service',
+      '          region: us-central1',
+      '          image: ${{ env.IMAGE_TAG }}'
+    ].join('\n');
+  },
+  'docker-compose': function() {
+    return [
+      '      - name: Deploy with Docker Compose',
+      '        uses: appleboy/ssh-action@v1.0.0',
+      '        with:',
+      '          host: ${{ secrets.HOST }}',
+      '          username: ubuntu',
+      '          key: ${{ secrets.SSH_KEY }}',
+      '          script: |',
+      '            cd /app',
+      '            echo IMAGE_TAG=${{ env.IMAGE_TAG }} > .env',
+      '            docker compose pull',
+      '            docker compose up -d --remove-orphans'
+    ].join('\n');
+  }
+};
+
+function buildGHA(o) {
+  var lang = LANG_SETUP[o.lang] || LANG_SETUP.node;
+  var lines = [];
+  lines.push('name: Deploy Pipeline');
+  lines.push('');
+  lines.push('on:');
+  lines.push('  push:');
+  lines.push('    branches: ["' + o.branch + '"]');
+  lines.push('');
+  lines.push('env:');
+  lines.push('  IMAGE_NAME: ${{ github.repository }}');
+  lines.push('  IMAGE_TAG: ghcr.io/${{ github.repository }}:${{ github.sha }}');
+  lines.push('');
+  lines.push('jobs:');
+
+  // Test job
+  lines.push('  test:');
+  lines.push('    name: Test');
+  lines.push('    runs-on: ubuntu-latest');
+  lines.push('    steps:');
+  lines.push('      - uses: actions/checkout@v4');
+  lines.push('      - uses: ' + lang.setup);
+
+  if (o.cache && o.lang !== 'docker') {
+    lines.push('      - name: Cache dependencies');
+    lines.push('        uses: actions/cache@v4');
+    lines.push('        with:');
+    lines.push('          path: ~/.cache');
+    lines.push('          key: ${{ runner.os }}-' + o.lang + '-${{ hashFiles("' + lang.pkg + '") }}');
+  }
+
+  lines.push('      - name: Install dependencies');
+  lines.push('        run: ' + lang.install);
+
+  if (o.test !== 'none') {
+    lines.push('      - name: Run tests');
+    lines.push('        run: ' + lang.test);
+  }
+
+  // Security scan
+  if (o.security) {
+    lines.push('      - name: Security scan (Trivy)');
+    lines.push('        uses: aquasecurity/trivy-action@master');
+    lines.push('        with:');
+    lines.push('          scan-type: "fs"');
+    lines.push('          exit-code: "1"');
+    lines.push('          severity: "CRITICAL,HIGH"');
+  }
+
+  // Build & push job
+  if (o.docker) {
+    lines.push('');
+    lines.push('  build:');
+    lines.push('    name: Build & Push Docker Image');
+    lines.push('    runs-on: ubuntu-latest');
+    lines.push('    needs: test');
+    lines.push('    steps:');
+    lines.push('      - uses: actions/checkout@v4');
+    lines.push('      - uses: docker/setup-buildx-action@v3');
+    lines.push('      - name: Login to GHCR');
+    lines.push('        uses: docker/login-action@v3');
+    lines.push('        with:');
+    lines.push('          registry: ghcr.io');
+    lines.push('          username: ${{ github.actor }}');
+    lines.push('          password: ${{ secrets.GITHUB_TOKEN }}');
+    lines.push('      - name: Build and push');
+    lines.push('        uses: docker/build-push-action@v5');
+    lines.push('        with:');
+    lines.push('          push: true');
+    lines.push('          tags: ${{ env.IMAGE_TAG }}');
+    lines.push('          cache-from: type=gha');
+    lines.push('          cache-to: type=gha,mode=max');
+  }
+
+  var deployNeeds = o.docker ? 'build' : 'test';
+
+  // Staging deploy (if applicable)
+  if (o.envs !== 'prod-only') {
+    lines.push('');
+    lines.push('  deploy-staging:');
+    lines.push('    name: Deploy to Staging');
+    lines.push('    runs-on: ubuntu-latest');
+    lines.push('    needs: ' + deployNeeds);
+    lines.push('    environment: staging');
+    lines.push('    steps:');
+    lines.push('      - uses: actions/checkout@v4');
+    var deployFn = DEPLOY_STEPS[o.target];
+    if (deployFn) lines.push(deployFn(o.strategy));
+  }
+
+  // Production deploy
+  lines.push('');
+  lines.push('  deploy-production:');
+  lines.push('    name: Deploy to Production');
+  lines.push('    runs-on: ubuntu-latest');
+  lines.push('    needs: ' + (o.envs !== 'prod-only' ? 'deploy-staging' : deployNeeds));
+  lines.push('    environment: production');
+  lines.push('    steps:');
+  lines.push('      - uses: actions/checkout@v4');
+  var deployFnProd = DEPLOY_STEPS[o.target];
+  if (deployFnProd) lines.push(deployFnProd(o.strategy));
+
+  if (o.rollback) {
+    lines.push('      - name: Rollback on failure');
+    lines.push('        if: failure()');
+    lines.push('        run: |');
+    lines.push('          echo "Deployment failed. Rolling back..."');
+    if (o.target === 'k8s') {
+      lines.push('          kubectl rollout undo deployment/app');
+    } else if (o.target === 'ecs') {
+      lines.push('          aws ecs update-service --service my-service --task-definition previous-task-def');
+    } else {
+      lines.push('          echo "Re-deploy previous image to roll back"');
+    }
+  }
+
+  if (o.slack) {
+    lines.push('      - name: Notify Slack');
+    lines.push('        if: always()');
+    lines.push('        uses: slackapi/slack-github-action@v1.26.0');
+    lines.push('        with:');
+    lines.push('          payload: |');
+    lines.push('            {"text": "Deployment ${{ job.status }}: ${{ github.repository }}@${{ github.sha }}"}');
+    lines.push('        env:');
+    lines.push('          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}');
+  }
+
+  return lines.join('\n');
+}
+
+function buildGitLab(o) {
+  var lang = LANG_SETUP[o.lang] || LANG_SETUP.node;
+  var lines = [];
+  lines.push('# .gitlab-ci.yml — Deployment Automation Pipeline');
+  lines.push('');
+  lines.push('stages:');
+  if (o.envs !== 'prod-only') {
+    lines.push('  - test');
+    lines.push('  - build');
+    lines.push('  - deploy-staging');
+    lines.push('  - deploy-production');
+  } else {
+    lines.push('  - test');
+    lines.push('  - build');
+    lines.push('  - deploy');
+  }
+  lines.push('');
+  lines.push('variables:');
+  lines.push('  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA');
+  lines.push('');
+  lines.push('test:');
+  lines.push('  stage: test');
+  if (o.lang !== 'docker') {
+    lines.push('  image: ' + (o.lang === 'node' ? 'node:20' : o.lang === 'python' ? 'python:3.12' : o.lang === 'java' ? 'maven:3.9-eclipse-temurin-21' : 'golang:1.22'));
+  }
+  lines.push('  script:');
+  lines.push('    - ' + lang.install);
+  if (o.test !== 'none') lines.push('    - ' + lang.test);
+  lines.push('  only:');
+  lines.push('    - ' + o.branch);
+  lines.push('');
+  if (o.docker) {
+    lines.push('build:');
+    lines.push('  stage: build');
+    lines.push('  image: docker:24');
+    lines.push('  services:');
+    lines.push('    - docker:24-dind');
+    lines.push('  script:');
+    lines.push('    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY');
+    lines.push('    - docker build -t $IMAGE_TAG .');
+    lines.push('    - docker push $IMAGE_TAG');
+    lines.push('  only:');
+    lines.push('    - ' + o.branch);
+  }
+  lines.push('');
+  if (o.envs !== 'prod-only') {
+    lines.push('deploy-staging:');
+    lines.push('  stage: deploy-staging');
+    lines.push('  environment: staging');
+    lines.push('  script:');
+    lines.push('    - echo "Deploying $IMAGE_TAG to staging"');
+    if (o.target === 'k8s') lines.push('    - kubectl set image deployment/app app=$IMAGE_TAG');
+    lines.push('  only:');
+    lines.push('    - ' + o.branch);
+    lines.push('');
+  }
+  lines.push('deploy-production:');
+  lines.push('  stage: ' + (o.envs !== 'prod-only' ? 'deploy-production' : 'deploy'));
+  lines.push('  environment: production');
+  lines.push('  when: manual');
+  lines.push('  script:');
+  lines.push('    - echo "Deploying $IMAGE_TAG to production"');
+  if (o.target === 'k8s') lines.push('    - kubectl set image deployment/app app=$IMAGE_TAG');
+  if (o.rollback) {
+    lines.push('    - kubectl rollout status deployment/app || kubectl rollout undo deployment/app');
+  }
+  lines.push('  only:');
+  lines.push('    - ' + o.branch);
+  return lines.join('\n');
+}
+
+function buildJenkins(o) {
+  var lang = LANG_SETUP[o.lang] || LANG_SETUP.node;
+  var lines = [];
+  lines.push('// Jenkinsfile — Deployment Automation Pipeline');
+  lines.push('pipeline {');
+  lines.push('  agent any');
+  lines.push('  environment {');
+  lines.push('    IMAGE_TAG = "myrepo/app:${env.GIT_COMMIT[0..7]}"');
+  lines.push('  }');
+  lines.push('  stages {');
+  lines.push('    stage("Checkout") {');
+  lines.push('      steps { checkout scm }');
+  lines.push('    }');
+  lines.push('    stage("Test") {');
+  lines.push('      steps {');
+  if (o.lang === 'node') lines.push('        sh "npm ci && npm test"');
+  else if (o.lang === 'python') lines.push('        sh "pip install -r requirements.txt && pytest"');
+  else if (o.lang === 'java') lines.push('        sh "mvn test"');
+  else if (o.lang === 'go') lines.push('        sh "go test ./..."');
+  else lines.push('        sh "echo No tests"');
+  lines.push('      }');
+  lines.push('    }');
+  if (o.docker) {
+    lines.push('    stage("Build Docker") {');
+    lines.push('      steps {');
+    lines.push('        sh "docker build -t ${IMAGE_TAG} ."');
+    lines.push('        sh "docker push ${IMAGE_TAG}"');
+    lines.push('      }');
+    lines.push('    }');
+  }
+  if (o.envs !== 'prod-only') {
+    lines.push('    stage("Deploy Staging") {');
+    lines.push('      steps {');
+    lines.push('        sh "kubectl set image deployment/app app=${IMAGE_TAG} --namespace=staging"');
+    lines.push('        sh "kubectl rollout status deployment/app --namespace=staging"');
+    lines.push('      }');
+    lines.push('    }');
+  }
+  lines.push('    stage("Deploy Production") {');
+  lines.push('      when { branch "' + o.branch + '" }');
+  lines.push('      input { message "Deploy to production?" }');
+  lines.push('      steps {');
+  lines.push('        sh "kubectl set image deployment/app app=${IMAGE_TAG} --namespace=production"');
+  if (o.rollback) {
+    lines.push('        sh "kubectl rollout status deployment/app || kubectl rollout undo deployment/app"');
+  }
+  lines.push('      }');
+  lines.push('    }');
+  lines.push('  }');
+  if (o.slack) {
+    lines.push('  post {');
+    lines.push('    always {');
+    lines.push('      slackSend(color: currentBuild.result, message: "Build ${currentBuild.result}: ${env.JOB_NAME} ${env.BUILD_NUMBER}")');
+    lines.push('    }');
+    lines.push('  }');
+  }
+  lines.push('}');
+  return lines.join('\n');
+}
+
+function generate() {
+  var o = getOpts();
+  var yaml;
+  if (currentPlatform === 'gha') yaml = buildGHA(o);
+  else if (currentPlatform === 'gitlab') yaml = buildGitLab(o);
+  else yaml = buildJenkins(o);
+
+  document.getElementById('yamlBox').textContent = yaml;
+  document.getElementById('outputDiv').style.display = 'block';
+
+  var heads = { gha: '// .github/workflows/deploy.yml', gitlab: '// .gitlab-ci.yml', jenkins: '// Jenkinsfile' };
+  document.getElementById('outputHead').textContent = heads[currentPlatform] || heads.gha;
+}
+
+function loadExample() {
+  document.getElementById('langSel').value    = 'node';
+  document.getElementById('targetSel').value  = 'k8s';
+  document.getElementById('strategySel').value = 'bluegreen';
+  document.getElementById('branchSel').value  = 'main';
+  document.getElementById('testSel').value    = 'jest';
+  document.getElementById('envSel').value     = 'staging-prod';
+  document.getElementById('cbDocker').checked  = true;
+  document.getElementById('cbSlack').checked   = true;
+  document.getElementById('cbRollback').checked = true;
+  document.getElementById('cbSecurity').checked = false;
+  document.getElementById('cbCache').checked   = true;
+  generate();
+}
+
+function copyYaml() {
+  var text = document.getElementById('yamlBox').textContent;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(showCopyFb);
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showCopyFb();
+  }
+}
+
+function showCopyFb() {
+  var fb = document.getElementById('copyFb');
+  fb.style.display = 'inline';
+  setTimeout(function() { fb.style.display = 'none'; }, 2000);
+}
+
+function toggleFaq(btn) {
+  btn.parentElement.classList.toggle('open');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('generateBtn').addEventListener('click', generate);
+  document.getElementById('sampleBtn').addEventListener('click', loadExample);
+  document.getElementById('copyBtn').addEventListener('click', copyYaml);
+  document.getElementById('clearBtn').addEventListener('click', function() {
+    document.getElementById('outputDiv').style.display = 'none';
+  });
+});
+</script>
 
 </body>
 </html>
