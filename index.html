@@ -7,16 +7,16 @@
 <meta name="google-site-verification" content="PkLa_ViOo6FAHpvh8SacceMb95o9tePRdrqLNBz9X1M" />
 <meta name="robots" content="index, follow">
 
-<title>Deployment Automation – Free CI/CD Pipeline Generator, Solutions &amp; Best Practices (2025)</title>
+<title>Deployment Automation Tools & Rollback Strategies: Free CI/CD Pipeline Generator (2025)</title>
 
-<meta name="description" content="Free deployment automation tools. Generate GitHub Actions, GitLab CI, and Jenkins pipelines for your stack. Blue-green deployment, rollback strategies, and deployment automation solutions guide for 2025.">
+<meta name="description" content="Deployment automation tools comparison with free CI/CD pipeline generator. Compare 14+ solutions (GitHub Actions, GitLab CI, Jenkins, Octopus) with G2 ratings. Rollback strategies & deployment best practices guide 2025.">
 
-<meta name="keywords" content="deployment automation, deployment automation solutions, deployment automation tools, ci cd pipeline generator, github actions generator, deployment pipeline, blue green deployment, rollback strategy, devops deployment automation, automated deployment">
+<meta name="keywords" content="deployment automation, deployment automation solutions, deployment automation tools, ci cd pipeline generator, github actions generator, deployment pipeline, blue green deployment, rollback strategy, reliable rollback deployment control, devops deployment automation">
 
 <link rel="canonical" href="https://franrivalbigprojects.github.io/deployment-automation-tools/">
 
-<meta property="og:title" content="Deployment Automation – Free CI/CD Pipeline Generator and Solutions Guide 2025">
-<meta property="og:description" content="Generate GitHub Actions, GitLab CI, and Jenkins pipelines for your stack. Deployment automation solutions, best practices, and strategy guide.">
+<meta property="og:title" content="Deployment Automation Tools & Rollback Strategies: Free CI/CD Pipeline Generator 2025">
+<meta property="og:description" content="Compare 14+ deployment automation tools with G2 ratings. Free GitHub Actions, GitLab CI, Jenkins generator. Blue-green, canary & rollback deployment strategies explained.">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -350,7 +350,7 @@ h1 em { font-style: normal; color: var(--dep); }
 
 .sol-row {
   display: grid;
-  grid-template-columns: 140px 80px 80px 1fr;
+  grid-template-columns: 140px 80px 80px 120px 1fr;
   border-bottom: 1px solid var(--border2);
 }
 
@@ -369,6 +369,7 @@ h1 em { font-style: normal; color: var(--dep); }
 .sol-cell:last-child { border-right: none; }
 .sol-head .sol-cell { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
 .sol-name { color: var(--dep); font-weight: 600; }
+.sol-rating { color: var(--yellow); font-weight: 600; }
 
 .badge {
   font-family: var(--mono);
@@ -381,6 +382,18 @@ h1 em { font-style: normal; color: var(--dep); }
 .b-saas  { color: var(--dep);    background: var(--dep-dim2);   border-color: rgba(129,140,248,0.25); }
 .b-oss   { color: var(--orange); background: var(--orange-dim); border-color: rgba(251,146,60,0.2); }
 .b-cloud { color: var(--yellow); background: var(--yellow-dim); border-color: rgba(251,191,36,0.2); }
+
+.rating-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 9px;
+  padding: 2px 5px;
+  background: rgba(251,191,36,0.1);
+  color: var(--yellow);
+  border: 1px solid rgba(251,191,36,0.3);
+  border-radius: 2px;
+  font-weight: 600;
+}
 
 /* SECTION */
 hr.divider { border: none; border-top: 1px solid var(--border2); margin: 50px 0; }
@@ -507,8 +520,8 @@ footer p { font-family: var(--mono); font-size: 11px; color: var(--text-dim); ma
 
 @media (max-width: 640px) {
   .opts-grid { grid-template-columns: 1fr 1fr; }
-  .sol-row   { grid-template-columns: 110px 60px 1fr; }
-  .sol-row .sol-cell:nth-child(3) { display: none; }
+  .sol-row   { grid-template-columns: 100px 60px 1fr; }
+  .sol-row .sol-cell:nth-child(3), .sol-row .sol-cell:nth-child(4) { display: none; }
 }
 </style>
 
@@ -517,7 +530,53 @@ footer p { font-family: var(--mono); font-size: 11px; color: var(--text-dim); ma
 </script>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is deployment automation?","acceptedAnswer":{"@type":"Answer","text":"Deployment automation is the process of using software to automatically deploy application code and configuration changes to target environments without manual intervention. A deployment automation solution typically includes: a CI/CD pipeline that builds, tests, and packages code; a deployment mechanism that pushes the build to servers or containers; environment-specific configuration management; rollback capabilities if the deployment fails; and notifications about deployment status. Common deployment automation solutions include GitHub Actions, GitLab CI, Jenkins, CircleCI, and Octopus Deploy."}},{"@type":"Question","name":"What are the best deployment automation solutions in 2025?","acceptedAnswer":{"@type":"Answer","text":"Top deployment automation solutions in 2025: GitHub Actions (free for public repos, integrated with GitHub), GitLab CI/CD (built into GitLab, powerful pipeline YAML), Jenkins (open source, highly customizable), CircleCI (SaaS, fast), ArgoCD (GitOps for Kubernetes), Octopus Deploy (enterprise, complex release management), AWS CodePipeline (native AWS), Spinnaker (multi-cloud, Netflix-origin). For most teams starting out: GitHub Actions is the simplest and most cost-effective deployment automation solution."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is deployment automation?","acceptedAnswer":{"@type":"Answer","text":"Deployment automation is the process of using software to automatically deploy application code and configuration changes to target environments without manual intervention. A deployment automation solution typically includes: a CI/CD pipeline that builds, tests, and packages code; a deployment mechanism that pushes the build to servers or containers; environment-specific configuration management; rollback capabilities if the deployment fails; and notifications about deployment status. Common deployment automation solutions include GitHub Actions, GitLab CI, Jenkins, CircleCI, and Octopus Deploy."}},{"@type":"Question","name":"What are the best deployment automation solutions in 2025?","acceptedAnswer":{"@type":"Answer","text":"Top deployment automation solutions in 2025: GitHub Actions (free for public repos, integrated with GitHub), GitLab CI/CD (built into GitLab, powerful pipeline YAML), Jenkins (open source, highly customizable), CircleCI (SaaS, fast), ArgoCD (GitOps for Kubernetes), Octopus Deploy (enterprise, complex release management), AWS CodePipeline (native AWS), Spinnaker (multi-cloud, Netflix-origin). For most teams starting out: GitHub Actions is the simplest and most cost-effective deployment automation solution."}},{"@type":"Question","name":"What is a reliable rollback and deployment control strategy?","acceptedAnswer":{"@type":"Answer","text":"Reliable rollback requires: (1) immutable image tagging (never use 'latest'), (2) deployment history tracking, (3) health check verification before finalizing, (4) automated rollback triggers. Blue-green deployments offer instant rollback by switching traffic. GitOps (ArgoCD, Flux) provides Git-based rollback. Most reliable: blue-green for critical services, GitOps for Kubernetes, automated health-check rollback for high-frequency deployments."}}]}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ComparisonTable",
+  "mainEntity": [
+    {
+      "@type": "Product",
+      "name": "GitHub Actions",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "2199"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "GitLab CI/CD",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "823"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "Jenkins",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "523"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+}
 </script>
 
 </head>
@@ -526,7 +585,7 @@ footer p { font-family: var(--mono); font-size: 11px; color: var(--text-dim); ma
 <header>
   <div class="header-inner">
     <span class="logo-pill">Deploy</span>
-    <span class="logo-text"><strong>automation</strong> &middot; pipeline generator &middot; solutions 2025</span>
+    <span class="logo-text"><strong>automation</strong> &middot; pipeline generator &middot; rollback strategies &middot; 2025</span>
   </div>
 </header>
 
@@ -534,14 +593,14 @@ footer p { font-family: var(--mono); font-size: 11px; color: var(--text-dim); ma
 
   <section class="hero">
     <p class="hero-eyebrow">// DevOps Deployment Automation 2025</p>
-    <h1><em>Deployment Automation</em> —<br>Pipeline Generator &amp; Solutions Guide</h1>
+    <h1><em>Deployment Automation</em> Tools —<br>Free Pipeline Generator & Comparison</h1>
     <p class="hero-sub">
-      Generate <strong>GitHub Actions, GitLab CI, and Jenkins pipelines</strong> for your stack. Complete deployment automation solutions guide with blue-green, canary, and rollback strategies.
+      Generate <strong>GitHub Actions, GitLab CI, and Jenkins pipelines</strong> instantly. Compare 14+ deployment automation solutions with G2 ratings. Master <strong>blue-green, canary, and reliable rollback strategies</strong>.
     </p>
     <div class="pill-row">
       <span class="pill pill-d">GitHub Actions</span>
       <span class="pill pill-d">GitLab CI</span>
-      <span class="pill pill-dim">Jenkins</span>
+      <span class="pill pill-d">Jenkins</span>
       <span class="pill pill-dim">Blue-Green</span>
       <span class="pill pill-dim">Rollback</span>
       <span class="pill pill-dim">Kubernetes</span>
@@ -558,7 +617,6 @@ footer p { font-family: var(--mono); font-size: 11px; color: var(--text-dim); ma
         <button class="btn-sm btn-ghost" id="clearBtn">Clear</button>
       </div>
     </div>
-
 
 <div class="platform-row">
   <button class="plat-btn active" onclick="setPlatform('gha',this)">GitHub Actions</button>
@@ -632,7 +690,7 @@ footer p { font-family: var(--mono); font-size: 11px; color: var(--text-dim); ma
     <label class="dep-check"><input type="checkbox" id="cbCache" checked> Dependency caching</label>
   </div>
 
-  <button class="btn-generate" id="generateBtn">Generate Pipeline</button>
+<button class="btn-generate" id="generateBtn">Generate Pipeline</button>
 
   <div id="outputDiv" style="display:none;">
     <div class="output-head" id="outputHead">// .github/workflows/deploy.yml</div>
@@ -646,66 +704,153 @@ footer p { font-family: var(--mono); font-size: 11px; color: var(--text-dim); ma
 
   <hr class="divider">
 
-  <!-- SOLUTIONS TABLE -->
+  <!-- DEPLOYMENT AUTOMATION SOLUTIONS COMPARISON -->
 
   <section class="content-section">
     <div class="sec-head">
-      <span class="sec-label">Deployment automation solutions 2025</span>
+      <span class="sec-label">14 Deployment Automation Solutions (G2 Rated)</span>
       <span class="sec-rule"></span>
     </div>
     <div class="sol-table">
       <div class="sol-row sol-head">
         <div class="sol-cell">Solution</div>
         <div class="sol-cell">Type</div>
-        <div class="sol-cell">Best for</div>
-        <div class="sol-cell">Notes</div>
+        <div class="sol-cell">Rating</div>
+        <div class="sol-cell">Reviews</div>
+        <div class="sol-cell">Best for / Notes</div>
       </div>
       <div class="sol-row">
         <div class="sol-cell sol-name">GitHub Actions</div>
         <div class="sol-cell"><span class="badge b-saas">SaaS</span></div>
-        <div class="sol-cell" style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">GitHub repos</div>
-        <div class="sol-cell">Free for public repos. 2,000 min/month free private. Largest marketplace of reusable actions. Best starting point.</div>
+        <div class="sol-cell sol-rating"><span class="rating-badge">4.7★</span></div>
+        <div class="sol-cell">2,199</div>
+        <div class="sol-cell">GitHub repos. Free for public. 2000 min/month private. Largest marketplace.</div>
       </div>
       <div class="sol-row">
         <div class="sol-cell sol-name">GitLab CI/CD</div>
         <div class="sol-cell"><span class="badge b-saas">SaaS/OSS</span></div>
-        <div class="sol-cell" style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">GitLab repos</div>
-        <div class="sol-cell">Built into GitLab. Powerful .gitlab-ci.yml. Self-hosted option. 400 min/month free on SaaS.</div>
+        <div class="sol-cell sol-rating"><span class="rating-badge">4.5★</span></div>
+        <div class="sol-cell">823</div>
+        <div class="sol-cell">Built-in to GitLab. 400 min/month free. Powerful .gitlab-ci.yml. Self-hosted available.</div>
       </div>
       <div class="sol-row">
         <div class="sol-cell sol-name">Jenkins</div>
         <div class="sol-cell"><span class="badge b-oss">Open Source</span></div>
-        <div class="sol-cell" style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">Self-hosted</div>
-        <div class="sol-cell">Most flexible, huge plugin ecosystem. Requires maintenance. Jenkinsfile (Groovy DSL). Best for complex enterprise pipelines.</div>
-      </div>
-      <div class="sol-row">
-        <div class="sol-cell sol-name">ArgoCD</div>
-        <div class="sol-cell"><span class="badge b-oss">Open Source</span></div>
-        <div class="sol-cell" style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">Kubernetes</div>
-        <div class="sol-cell">GitOps for Kubernetes. Syncs Kubernetes manifests from Git. Automatic rollback on health check failure.</div>
-      </div>
-      <div class="sol-row">
-        <div class="sol-cell sol-name">CircleCI</div>
-        <div class="sol-cell"><span class="badge b-saas">SaaS</span></div>
-        <div class="sol-cell" style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">Speed</div>
-        <div class="sol-cell">Fast pipelines, good Docker support. 6,000 free build minutes/month. Strong caching.</div>
-      </div>
-      <div class="sol-row">
-        <div class="sol-cell sol-name">AWS CodePipeline</div>
-        <div class="sol-cell"><span class="badge b-cloud">AWS</span></div>
-        <div class="sol-cell" style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">AWS stacks</div>
-        <div class="sol-cell">Native AWS integration (ECS, Lambda, EC2). Pay-per-pipeline-execution. Best for AWS-native teams.</div>
+        <div class="sol-cell sol-rating"><span class="rating-badge">4.4★</span></div>
+        <div class="sol-cell">523</div>
+        <div class="sol-cell">Most flexible. 1,800+ plugins. Best for complex enterprise pipelines. Requires maintenance.</div>
       </div>
       <div class="sol-row">
         <div class="sol-cell sol-name">Octopus Deploy</div>
         <div class="sol-cell"><span class="badge b-saas">Enterprise</span></div>
-        <div class="sol-cell" style="font-family:var(--mono);font-size:10px;color:var(--text-muted);">Enterprise</div>
-        <div class="sol-cell">Complex release management, multi-environment, approval workflows. Strong .NET / Windows support.</div>
+        <div class="sol-cell sol-rating"><span class="rating-badge">4.4★</span></div>
+        <div class="sol-cell">52</div>
+        <div class="sol-cell">Complex release management. Multi-environment. Strong rollback. Starting at $10/mo.</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">CircleCI</div>
+        <div class="sol-cell"><span class="badge b-saas">SaaS</span></div>
+        <div class="sol-cell sol-rating"><span class="rating-badge">4.4★</span></div>
+        <div class="sol-cell">503</div>
+        <div class="sol-cell">Fast pipelines. 6,000 free minutes/month. Strong caching. Cloud-native apps.</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">Azure DevOps</div>
+        <div class="sol-cell"><span class="badge b-cloud">Microsoft</span></div>
+        <div class="sol-cell sol-rating"><span class="rating-badge">4.3★</span></div>
+        <div class="sol-cell">584</div>
+        <div class="sol-cell">End-to-end DevOps. CI/CD, testing, project tracking. Best for Microsoft stacks.</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">TeamCity</div>
+        <div class="sol-cell"><span class="badge b-saas">Commercial</span></div>
+        <div class="sol-cell sol-rating"><span class="rating-badge">4.3★</span></div>
+        <div class="sol-cell">85</div>
+        <div class="sol-cell">Code coverage analysis. Flaky test detection. Risk-based execution. $45/mo cloud.</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">AWS CodePipeline</div>
+        <div class="sol-cell"><span class="badge b-cloud">AWS</span></div>
+        <div class="sol-cell sol-rating"><span class="rating-badge">4.2★</span></div>
+        <div class="sol-cell">65</div>
+        <div class="sol-cell">Native AWS integration. EC2, Lambda, ECS. Pay-per-execution. AWS-only focus.</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">ArgoCD</div>
+        <div class="sol-cell"><span class="badge b-oss">Open Source</span></div>
+        <div class="sol-cell sol-rating"><span class="rating-badge">4.5★</span></div>
+        <div class="sol-cell">31</div>
+        <div class="sol-cell">Kubernetes-native GitOps. Auto-sync from Git. Automatic rollback on health failure.</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">Ansible</div>
+        <div class="sol-cell"><span class="badge b-oss">Open Source</span></div>
+        <div class="sol-cell sol-rating"><span class="rating-badge">4.6★</span></div>
+        <div class="sol-cell">309</div>
+        <div class="sol-cell">Configuration management. YAML playbooks. Agentless. Infrastructure-as-code.</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">Harness</div>
+        <div class="sol-cell"><span class="badge b-saas">SaaS</span></div>
+        <div class="sol-cell sol-rating"><span class="rating-badge">4.5★</span></div>
+        <div class="sol-cell">120</div>
+        <div class="sol-cell">Continuous delivery platform. AI-powered rollback. Progressive deployment. Enterprise.</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">Spinnaker</div>
+        <div class="sol-cell"><span class="badge b-oss">Open Source</span></div>
+        <div class="sol-cell sol-rating"><span class="rating-badge">4.3★</span></div>
+        <div class="sol-cell">45</div>
+        <div class="sol-cell">Multi-cloud deployments. Netflix-origin. Canary deployments. Complex strategies.</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">Bamboo</div>
+        <div class="sol-cell"><span class="badge b-saas">Commercial</span></div>
+        <div class="sol-cell sol-rating"><span class="rating-badge">4.1★</span></div>
+        <div class="sol-cell">64</div>
+        <div class="sol-cell">Atlassian integration (Jira, Bitbucket). Parallel testing. $1,200+ data center.</div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-cell sol-name">Puppet</div>
+        <div class="sol-cell"><span class="badge b-oss">OSS/Commercial</span></div>
+        <div class="sol-cell sol-rating"><span class="rating-badge">4.2★</span></div>
+        <div class="sol-cell">43</div>
+        <div class="sol-cell">Infrastructure automation. Declarative configs. Multi-environment. Compliance management.</div>
       </div>
     </div>
   </section>
 
-  <!-- GUIDE -->
+  <hr class="divider">
+
+  <!-- ROLLBACK STRATEGIES SECTION -->
+
+  <section class="content-section">
+    <div class="sec-head">
+      <span class="sec-label">Reliable Rollback & Deployment Control Strategies</span>
+      <span class="sec-rule"></span>
+    </div>
+    <div class="dense-block">
+      <p><strong>Manual Rollback Strategy (Jenkins, GitHub Actions, GitLab CI)</strong><br>
+      Re-deploy the previous image tag to production. Requires <strong>immutable image naming</strong> — never use <code>latest</code>. Tag images with git SHA or semantic version: <code>app:v1.2.3</code> or <code>app:abc1234</code>. To rollback: trigger deployment with previous tag. Reliable control: maintain a deployment history log. Drawback: 5-10 minute rollback time. Best for: non-critical services, development/staging environments.</p>
+
+
+  <p><strong>Blue-Green Deployment (Kubernetes, AWS Elastic Beanstalk, Octopus Deploy)</strong><br>
+  Maintain two identical environments: Blue (current production) and Green (new version). Deploy new code to Green, run smoke tests, then switch traffic via load balancer or service selector. Rollback: switch traffic back to Blue in seconds. Cost: requires double infrastructure. Advantage: instant, zero-downtime rollback — most reliable for critical services. Implementation: Kubernetes with two Deployments + Service label selector switch, or Nginx upstream switch.</p>
+
+  <p><strong>Canary Deployment with Automated Rollback (Argo Rollouts, Flagger, Harness)</strong><br>
+  Route small percentage of traffic (5% → 25% → 50% → 100%) to new version. Monitor error rates, latency, business metrics. Rollback automatically if metrics breach thresholds. Advantage: catches issues affecting small user base before full rollout. Requires: observability setup (Prometheus, Datadog). Tools like Harness offer AI-powered anomaly detection for auto-rollback. Most reliable for high-frequency deployments (10+ per day).</p>
+
+  <p><strong>GitOps Rollback (ArgoCD, Flux for Kubernetes)</strong><br>
+  Git repository is single source of truth. Deployment = Git commit changing image tag in manifest. Rollback = revert Git commit, ArgoCD auto-syncs cluster to previous state. Advantage: full audit trail, all changes reviewed via PRs, automatic drift detection. Most reliable for Kubernetes. Implementation: update image tag in deployment.yaml, commit, ArgoCD detects diff and reconciles in seconds.</p>
+
+  <p><strong>Automated Health-Check Rollback (Kubernetes, AWS CodeDeploy, Harness)</strong><br>
+  After deployment, run health checks (HTTP, custom scripts, Kubernetes liveness/readiness probes). If checks fail, automatically revert to previous version. Kubernetes native: set <code>maxUnavailable: 0</code>, configure readiness probes, use <code>progressDeadlineSeconds</code> for auto-rollback. Advantage: zero manual intervention. Reliable for stateless apps. Drawback: requires robust health check logic.</p>
+</div>
+
+
+  </section>
+
+  <!-- DEPLOYMENT STRATEGIES GUIDE -->
 
   <section class="content-section">
     <div class="sec-head">
@@ -739,12 +884,16 @@ footer p { font-family: var(--mono); font-size: 11px; color: var(--text-dim); ma
         <div class="faq-a"><strong>For most teams:</strong> GitHub Actions — free for public repos, 2000 min/month free, largest ecosystem. <strong>Kubernetes:</strong> ArgoCD (GitOps) or Flux. <strong>Enterprise:</strong> Octopus Deploy (complex release management). <strong>AWS:</strong> CodePipeline + CodeDeploy. <strong>Self-hosted:</strong> Jenkins (most flexible). <strong>Speed:</strong> CircleCI (fast builds, strong caching). Start with GitHub Actions — it handles 90% of use cases and requires no infrastructure.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">How do I implement a rollback in CI/CD?<span class="faq-arrow">&#9660;</span></button>
+        <button class="faq-q" onclick="toggleFaq(this)">How do I implement a reliable rollback in CI/CD?<span class="faq-arrow">&#9660;</span></button>
         <div class="faq-a">Three approaches: (1) <strong>Re-deploy previous image tag</strong> — tag Docker images with git SHA, re-trigger deployment with the previous tag. (2) <strong>Blue-Green switch</strong> — keep the old environment running, switch traffic back. Fastest rollback. (3) <strong>ArgoCD / GitOps</strong> — revert the Git commit that changed the manifest, ArgoCD auto-syncs. Always use immutable image tags (never <code>latest</code>) — rollback requires knowing which exact image to roll back to.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">What is GitOps and how does it relate to deployment automation?<span class="faq-arrow">&#9660;</span></button>
         <div class="faq-a">GitOps is a deployment automation pattern where Git is the single source of truth for both application code and infrastructure state. A GitOps agent (ArgoCD, Flux) continuously watches a Git repo and ensures the cluster state matches what's in Git. Deployments happen by merging a PR that updates the image tag in a Kubernetes manifest. Rollback = revert the Git commit. Benefits: full audit trail, all changes reviewed via PRs, automatic drift detection. Best for Kubernetes deployments.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What are the differences between blue-green and canary deployments?<span class="faq-arrow">&#9660;</span></button>
+        <div class="faq-a"><strong>Blue-Green:</strong> Two complete environments. Deploy new version (green), test fully, switch all traffic at once. Instant rollback. Requires double infrastructure. Best for: critical services, low-frequency deployments. <strong>Canary:</strong> Route 5-25% traffic to new version, monitor metrics, gradually increase. Catches issues on small user base. No extra infrastructure. Best for: high-frequency deployments, good observability. Hybrid: canary first, then blue-green switch when metrics are green.</div>
       </div>
     </div>
   </section>
@@ -766,6 +915,7 @@ footer p { font-family: var(--mono); font-size: 11px; color: var(--text-dim); ma
   <div class="tag-cloud">
     <span class="tag">deployment automation</span>
     <span class="tag">deployment automation solutions</span>
+    <span class="tag">deployment automation tools</span>
     <span class="tag">ci cd pipeline generator</span>
     <span class="tag">github actions generator</span>
     <span class="tag">gitlab ci yaml</span>
@@ -773,15 +923,17 @@ footer p { font-family: var(--mono); font-size: 11px; color: var(--text-dim); ma
     <span class="tag">blue green deployment</span>
     <span class="tag">canary deployment</span>
     <span class="tag">deployment rollback</span>
+    <span class="tag">reliable rollback deployment control</span>
     <span class="tag">gitops argocd</span>
+    <span class="tag">deployment strategies</span>
   </div>
 
 </div>
 
 <footer>
   <div class="footer-inner">
-    <p>deployment-automation &middot; pipeline generator &middot; solutions &middot; 2025</p>
-    <p>github actions &middot; gitlab ci &middot; jenkins &middot; blue-green &middot; rollback</p>
+    <p>deployment-automation &middot; pipeline generator &middot; solutions &middot; rollback &middot; 2025</p>
+    <p>github actions &middot; gitlab ci &middot; jenkins &middot; blue-green &middot; reliable rollback</p>
   </div>
 </footer>
 
